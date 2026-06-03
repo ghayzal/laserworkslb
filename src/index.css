@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-dark-900 dark:text-white font-sans
+           transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-200 dark:bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-dark-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-500/50;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-300 to-brand-500 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/70 dark:bg-white/[0.03] backdrop-blur-sm
+           border border-black/[0.06] dark:border-white/[0.06] rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300
+           hover:bg-white dark:hover:bg-white/[0.06]
+           hover:border-brand-500/30 dark:hover:border-brand-500/20
+           hover:shadow-lg hover:shadow-black/[0.04] dark:hover:shadow-none;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 30px rgba(0, 168, 232, 0.18), 0 0 60px rgba(0, 168, 232, 0.06);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-400 text-white font-semibold
+           px-7 py-3.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all duration-300
+           hover:shadow-brand-400/40 hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-black/15 dark:border-white/20 hover:border-brand-500/50
+           text-gray-800 dark:text-white font-medium px-7 py-3.5 rounded-xl transition-all duration-300
+           hover:bg-black/[0.04] dark:hover:bg-white/[0.05] active:scale-[0.98];
+  }
+
+  .section-label {
+    @apply inline-block text-brand-500 text-sm font-semibold tracking-widest uppercase mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight;
+  }
+
+  .laser-line {
+    @apply relative overflow-hidden;
+  }
+
+  .laser-line::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-500 to-transparent;
+    animation: laserSweep 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+}

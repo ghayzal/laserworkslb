@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Design source files (raw .ai, .zip, .psd etc.)
+design-source/
+
+# Playwright QA artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Agent / editor config
+.claude/
+
+# Local QA scratch artifacts (not part of the site)
+qa-run.txt
+qa-hero-desktop.jpeg
+qa-mobile-arabic.jpeg
+qa-mobile-menu.jpeg
+hero-bluecyan.jpeg
