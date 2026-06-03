@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Apply saved theme before paint to avoid a flash. Defaults to dark.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme')
+          if (t === 'light') document.documentElement.classList.remove('dark')
+          else document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <title>LaserWorks Lebanon | Advanced Laser Cleaning &amp; Restoration</title>
+    <meta name="description" content="LaserWorks provides professional laser cleaning and laser restoration services in Lebanon for automotive, industrial, marine, and commercial applications." />
+    <link rel="canonical" href="https://www.laserworkslb.com" />
+    <meta property="og:title" content="LaserWorks Lebanon | Advanced Laser Cleaning & Restoration" />
+    <meta property="og:description" content="LaserWorks provides professional laser cleaning and laser restoration services in Lebanon for automotive, industrial, marine, and commercial applications." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="LaserWorks Lebanon" />
+    <meta property="og:url" content="https://www.laserworkslb.com" />
+    <meta property="og:image" content="https://www.laserworkslb.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LaserWorks Lebanon | Advanced Laser Cleaning & Restoration" />
+    <meta name="twitter:description" content="Professional laser cleaning and restoration in Lebanon for automotive, industrial, marine, and commercial applications." />
+    <meta name="twitter:image" content="https://www.laserworkslb.com/og-image.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!--
+      ANALYTICS (optional — the site is fully static and tracks nothing until you enable one).
+      WhatsApp CTAs already fire a `whatsapp_click` event via src/lib/analytics.js.
+      Pick ONE provider and uncomment it:
+
+      ▸ Plausible (privacy-friendly, no cookie banner):
+      <script defer data-domain="laserworkslb.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+
+      ▸ Google Analytics 4 (replace G-XXXXXXXXXX with your Measurement ID):
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      </script>
+    -->
+    <script type="module" crossorigin src="./assets/index-q_OZnW71.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CwVpzpb5.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
