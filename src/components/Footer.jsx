@@ -3,6 +3,7 @@ import Logo from './Logo'
 import { trackWhatsApp } from '../lib/analytics'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/laserworkslb/'
+const MAPS_URL = 'https://maps.app.goo.gl/JFxBrQRa8Pc7oJXk8'
 
 export default function Footer({ t, whatsappUrl }) {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -82,9 +83,11 @@ export default function Footer({ t, whatsappUrl }) {
                   {t.contact.instagram}
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-sm text-gray-500">
-                <MapPin size={16} className="shrink-0 mt-0.5" />
-                <span>{t.contact.location}</span>
+              <li>
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 text-sm text-gray-500 hover:text-brand-500 transition-colors">
+                  <MapPin size={16} className="shrink-0 mt-0.5" />
+                  <span>{t.contact.location}</span>
+                </a>
               </li>
             </ul>
           </div>
