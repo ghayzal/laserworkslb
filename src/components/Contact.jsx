@@ -70,34 +70,40 @@ export default function Contact({ t, whatsappUrl }) {
             </div>
           </Reveal>
 
-          {/* Map card — live embedded Google Map of the real business location */}
+          {/* Map card — the whole card is tappable and opens Google Maps.
+              The iframe is a non-interactive visual preview (pointer-events: none)
+              so taps fall through to the link instead of being eaten by the embed. */}
           <Reveal delay={120} className="relative rounded-2xl overflow-hidden border border-white/10 min-h-[320px] flex bg-dark-700">
-            <iframe
-              title="LaserWorks Lebanon location on Google Maps"
-              src={MAP_EMBED}
-              className="absolute inset-0 w-full h-full"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open LaserWorks Lebanon location in Google Maps"
+              className="absolute inset-0 block"
+            >
+              <iframe
+                title="LaserWorks Lebanon location on Google Maps"
+                src={MAP_EMBED}
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                tabIndex={-1}
+                aria-hidden="true"
+              />
 
-            {/* Bottom overlay: business name + Directions button */}
-            <div className="absolute bottom-0 inset-x-0 z-10 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end justify-between gap-3">
-              <div className="min-w-0">
-                <h3 className="font-display font-semibold text-white leading-tight">LaserWorks Lebanon</h3>
-                <p className="text-white/75 text-xs leading-snug">{c.location}</p>
+              {/* Bottom overlay: business name + Directions button */}
+              <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end justify-between gap-3">
+                <div className="min-w-0">
+                  <h3 className="font-display font-semibold text-white leading-tight">LaserWorks Lebanon</h3>
+                  <p className="text-white/75 text-xs leading-snug">{c.location}</p>
+                </div>
+                <span className="btn-primary text-sm !px-4 !py-2 shrink-0">
+                  <ExternalLink size={15} />
+                  {c.directions || 'Directions'}
+                </span>
               </div>
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-sm !px-4 !py-2 shrink-0"
-              >
-                <ExternalLink size={15} />
-                {c.directions || 'Directions'}
-              </a>
-            </div>
+            </a>
           </Reveal>
         </div>
       </div>
