@@ -88,8 +88,8 @@ export default function Header({ t, lang, setLang, theme, setTheme, activeSectio
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-white/98 dark:bg-dark-900/98 backdrop-blur-xl z-40">
-          <nav className="flex flex-col items-center justify-center h-full gap-2 px-6">
+        <div className="lg:hidden fixed inset-x-0 top-16 md:top-20 bottom-0 bg-white dark:bg-dark-900 z-40 overflow-y-auto overscroll-contain">
+          <nav className="flex flex-col items-center justify-center min-h-full gap-2 px-6 py-8">
             {links.map((link) => (
               <button
                 key={link.id}
