@@ -154,6 +154,7 @@ const content = {
       whatsappCta: 'Chat on WhatsApp',
       phoneCta: 'Call Us',
       emailCta: 'Email Us',
+      directions: 'Directions',
     },
     footer: {
       description: 'Professional laser cleaning and restoration services in Lebanon. Eco-friendly, precise, and non-abrasive solutions for automotive, industrial, marine, and commercial applications.',
@@ -318,6 +319,7 @@ const content = {
       whatsappCta: 'تحدث عبر واتساب',
       phoneCta: 'اتصل بنا',
       emailCta: 'راسلنا',
+      directions: 'الاتجاهات',
     },
     footer: {
       description: 'خدمات احترافية للتنظيف والترميم بالليزر في لبنان. حلول صديقة للبيئة ودقيقة وغير كاشطة للتطبيقات الصناعية والبحرية والتجارية والسيارات.',

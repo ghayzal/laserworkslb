@@ -5,7 +5,10 @@ import { trackWhatsApp } from '../lib/analytics'
 const PHONE_TEL = 'tel:+96170046602'
 const EMAIL_HREF = 'mailto:aounjunior@gmail.com'
 const INSTAGRAM_URL = 'https://www.instagram.com/laserworkslb/'
-const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Furn%20El%20Chebbak%2C%20Mar%20Nohra%20Street%2C%20Lebanon'
+// Exact business location on Google Maps (opens the place / directions)
+const MAPS_URL = 'https://maps.app.goo.gl/JFxBrQRa8Pc7oJXk8'
+// Embeddable live map (no API key needed) pinned to the registered business
+const MAP_EMBED = 'https://maps.google.com/maps?q=Laserworkslb%2C%20Furn%20el%20Chebbak%2C%20Beirut%2C%20Lebanon&z=16&output=embed'
 
 export default function Contact({ t, whatsappUrl }) {
   const c = t.contact
@@ -67,32 +70,32 @@ export default function Contact({ t, whatsappUrl }) {
             </div>
           </Reveal>
 
-          {/* Map card */}
-          <Reveal delay={120} className="relative rounded-2xl overflow-hidden border border-white/10 min-h-[320px] flex">
-            {/* Stylized map background */}
-            <div className="absolute inset-0 bg-dark-700" />
-            <div
-              className="absolute inset-0 opacity-[0.5]"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0,168,232,0.06) 1px, transparent 1px),
-                                  linear-gradient(90deg, rgba(0,168,232,0.06) 1px, transparent 1px)`,
-                backgroundSize: '40px 40px',
-              }}
+          {/* Map card — live embedded Google Map of the real business location */}
+          <Reveal delay={120} className="relative rounded-2xl overflow-hidden border border-white/10 min-h-[320px] flex bg-dark-700">
+            <iframe
+              title="LaserWorks Lebanon location on Google Maps"
+              src={MAP_EMBED}
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(0,168,232,0.12),transparent_60%)]" />
 
-            <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 w-full">
-              <div className="relative mb-5">
-                <div className="absolute inset-0 bg-brand-500/30 rounded-full blur-xl animate-glow-pulse" />
-                <div className="relative w-16 h-16 rounded-full bg-brand-500 flex items-center justify-center">
-                  <MapPin size={28} className="text-white" />
-                </div>
+            {/* Bottom overlay: business name + Directions button */}
+            <div className="absolute bottom-0 inset-x-0 z-10 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end justify-between gap-3">
+              <div className="min-w-0">
+                <h3 className="font-display font-semibold text-white leading-tight">LaserWorks Lebanon</h3>
+                <p className="text-white/75 text-xs leading-snug">{c.location}</p>
               </div>
-              <h3 className="font-display font-semibold text-xl text-white mb-2">LaserWorks Lebanon</h3>
-              <p className="text-gray-400 mb-6 max-w-xs">{c.location}</p>
-              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm">
-                <ExternalLink size={16} />
-                View on Google Maps
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-sm !px-4 !py-2 shrink-0"
+              >
+                <ExternalLink size={15} />
+                {c.directions || 'Directions'}
               </a>
             </div>
           </Reveal>
