@@ -41,6 +41,7 @@ export default function Header({ t, lang, setLang, theme, setTheme, activeSectio
       : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.05]'
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -86,9 +87,10 @@ export default function Header({ t, lang, setLang, theme, setTheme, activeSectio
           </button>
         </div>
       </div>
+    </header>
 
-      {menuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 md:top-20 bottom-0 bg-white dark:bg-dark-900 z-40 overflow-y-auto overscroll-contain">
+    {menuOpen && (
+      <div className="lg:hidden fixed inset-x-0 top-16 md:top-20 bottom-0 bg-white dark:bg-dark-900 z-[60] overflow-y-auto overscroll-contain">
           <nav className="flex flex-col items-center justify-center min-h-full gap-2 px-6 py-8">
             {links.map((link) => (
               <button
@@ -112,6 +114,6 @@ export default function Header({ t, lang, setLang, theme, setTheme, activeSectio
           </nav>
         </div>
       )}
-    </header>
+    </>
   )
 }
